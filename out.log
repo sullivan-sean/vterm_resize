@@ -1,0 +1,10 @@
+Resizing from 20x20 with delta (-10, -10)
+Resizing from 20x20 with delta (-10, 0)
+Resizing from 20x20 with delta (0, -10)
+Resizing from 20x20 with delta (0, 0)
+Resizing from 20x20 with delta (0, 10)
+Resizing from 20x20 with delta (10, -10)
+Resizing from 20x20 with delta (10, 0)
+Resizing from 20x20 with delta (10, 10)
+Damage rect (0, 20, 0, 20). Screen size = 20x20
+Damage rect (0, 20, 20, 30). Screen size = 10x30

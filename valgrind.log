@@ -1,0 +1,163 @@
+==113997== Memcheck, a memory error detector
+==113997== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==113997== Using Valgrind-3.16.1 and LibVEX; rerun with -h for copyright info
+==113997== Command: ./main
+==113997== Parent PID: 100437
+==113997== 
+==113997== Invalid read of size 4
+==113997==    at 0x4877AD4: _get_chars (screen.c:700)
+==113997==    by 0x4877DE8: vterm_screen_get_text (screen.c:733)
+==113997==    by 0x109300: damage_cb (in main.c)
+==113997==    by 0x4876503: damagerect (screen.c:157)
+==113997==    by 0x48774C2: resize (screen.c:532)
+==113997==    by 0x487DAED: on_resize (state.c:1670)
+==113997==    by 0x487EB98: vterm_set_size (vterm.c:107)
+==113997==    by 0x109525: test_resize (in main.c)
+==113997==    by 0x10964D: main (in main.c)
+==113997==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==113997== 
+==113997== 
+==113997== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==113997==  Access not within mapped region at address 0x0
+==113997==    at 0x4877AD4: _get_chars (screen.c:700)
+==113997==    by 0x4877DE8: vterm_screen_get_text (screen.c:733)
+==113997==    by 0x109300: damage_cb (in main.c)
+==113997==    by 0x4876503: damagerect (screen.c:157)
+==113997==    by 0x48774C2: resize (screen.c:532)
+==113997==    by 0x487DAED: on_resize (state.c:1670)
+==113997==    by 0x487EB98: vterm_set_size (vterm.c:107)
+==113997==    by 0x109525: test_resize (in main.c)
+==113997==    by 0x10964D: main (in main.c)
+==113997==  If you believe this happened as a result of a stack
+==113997==  overflow in your program's main thread (unlikely but
+==113997==  possible), you can try to increase the size of the
+==113997==  main thread stack using the --main-stacksize= flag.
+==113997==  The main thread stack size used in this run was 8388608.
+==113997== 
+==113997== HEAP SUMMARY:
+==113997==     in use at exit: 13,924 bytes in 32 blocks
+==113997==   total heap usage: 349 allocs, 317 frees, 295,601 bytes allocated
+==113997== 
+==113997== 4 bytes in 1 blocks are still reachable in loss record 1 of 13
+==113997==    at 0x483E77F: malloc (vg_replace_malloc.c:307)
+==113997==    by 0x487E805: default_malloc (vterm.c:14)
+==113997==    by 0x487EAB8: vterm_allocator_malloc (vterm.c:85)
+==113997==    by 0x487D7F4: on_resize (state.c:1617)
+==113997==    by 0x487EB98: vterm_set_size (vterm.c:107)
+==113997==    by 0x109525: test_resize (in main.c)
+==113997==    by 0x10964D: main (in main.c)
+==113997== 
+==113997== 40 bytes in 1 blocks are still reachable in loss record 2 of 13
+==113997==    at 0x483E77F: malloc (vg_replace_malloc.c:307)
+==113997==    by 0x487E805: default_malloc (vterm.c:14)
+==113997==    by 0x487EAB8: vterm_allocator_malloc (vterm.c:85)
+==113997==    by 0x487D994: on_resize (state.c:1642)
+==113997==    by 0x487EB98: vterm_set_size (vterm.c:107)
+==113997==    by 0x109525: test_resize (in main.c)
+==113997==    by 0x10964D: main (in main.c)
+==113997== 
+==113997== 64 bytes in 1 blocks are still reachable in loss record 3 of 13
+==113997==    at 0x483E77F: malloc (vg_replace_malloc.c:307)
+==113997==    by 0x487E805: default_malloc (vterm.c:14)
+==113997==    by 0x487EAB8: vterm_allocator_malloc (vterm.c:85)
+==113997==    by 0x487E92E: vterm_new_with_allocator (vterm.c:53)
+==113997==    by 0x487E871: vterm_new (vterm.c:32)
+==113997==    by 0x10943F: test_resize (in main.c)
+==113997==    by 0x10964D: main (in main.c)
+==113997== 
+==113997== 64 bytes in 1 blocks are still reachable in loss record 4 of 13
+==113997==    at 0x483E77F: malloc (vg_replace_malloc.c:307)
+==113997==    by 0x487E805: default_malloc (vterm.c:14)
+==113997==    by 0x487EAB8: vterm_allocator_malloc (vterm.c:85)
+==113997==    by 0x487E98F: vterm_new_with_allocator (vterm.c:60)
+==113997==    by 0x487E871: vterm_new (vterm.c:32)
+==113997==    by 0x10943F: test_resize (in main.c)
+==113997==    by 0x10964D: main (in main.c)
+==113997== 
+==113997== 64 bytes in 1 blocks are still reachable in loss record 5 of 13
+==113997==    at 0x483E77F: malloc (vg_replace_malloc.c:307)
+==113997==    by 0x487E805: default_malloc (vterm.c:14)
+==113997==    by 0x487EAB8: vterm_allocator_malloc (vterm.c:85)
+==113997==    by 0x487E9C3: vterm_new_with_allocator (vterm.c:63)
+==113997==    by 0x487E871: vterm_new (vterm.c:32)
+==113997==    by 0x10943F: test_resize (in main.c)
+==113997==    by 0x10964D: main (in main.c)
+==113997== 
+==113997== 64 bytes in 1 blocks are still reachable in loss record 6 of 13
+==113997==    at 0x483E77F: malloc (vg_replace_malloc.c:307)
+==113997==    by 0x487E805: default_malloc (vterm.c:14)
+==113997==    by 0x487EAB8: vterm_allocator_malloc (vterm.c:85)
+==113997==    by 0x487DC2F: vterm_obtain_state (state.c:1709)
+==113997==    by 0x4877870: screen_new (screen.c:624)
+==113997==    by 0x48782AE: vterm_obtain_screen (screen.c:820)
+==113997==    by 0x109474: test_resize (in main.c)
+==113997==    by 0x10964D: main (in main.c)
+==113997== 
+==113997== 136 bytes in 1 blocks are still reachable in loss record 7 of 13
+==113997==    at 0x483E77F: malloc (vg_replace_malloc.c:307)
+==113997==    by 0x487E805: default_malloc (vterm.c:14)
+==113997==    by 0x487EAB8: vterm_allocator_malloc (vterm.c:85)
+==113997==    by 0x4877896: screen_new (screen.c:628)
+==113997==    by 0x48782AE: vterm_obtain_screen (screen.c:820)
+==113997==    by 0x109474: test_resize (in main.c)
+==113997==    by 0x10964D: main (in main.c)
+==113997== 
+==113997== 160 bytes in 1 blocks are still reachable in loss record 8 of 13
+==113997==    at 0x483E77F: malloc (vg_replace_malloc.c:307)
+==113997==    by 0x1093D3: test_resize (in main.c)
+==113997==    by 0x10964D: main (in main.c)
+==113997== 
+==113997== 328 bytes in 1 blocks are still reachable in loss record 9 of 13
+==113997==    at 0x483E77F: malloc (vg_replace_malloc.c:307)
+==113997==    by 0x487E805: default_malloc (vterm.c:14)
+==113997==    by 0x487E89E: vterm_new_with_allocator (vterm.c:38)
+==113997==    by 0x487E871: vterm_new (vterm.c:32)
+==113997==    by 0x10943F: test_resize (in main.c)
+==113997==    by 0x10964D: main (in main.c)
+==113997== 
+==113997== 400 bytes in 1 blocks are still reachable in loss record 10 of 13
+==113997==    at 0x483E77F: malloc (vg_replace_malloc.c:307)
+==113997==    by 0x487E805: default_malloc (vterm.c:14)
+==113997==    by 0x487EAB8: vterm_allocator_malloc (vterm.c:85)
+==113997==    by 0x4878A39: vterm_state_new (state.c:53)
+==113997==    by 0x487DBE8: vterm_obtain_state (state.c:1705)
+==113997==    by 0x4877870: screen_new (screen.c:624)
+==113997==    by 0x48782AE: vterm_obtain_screen (screen.c:820)
+==113997==    by 0x109474: test_resize (in main.c)
+==113997==    by 0x10964D: main (in main.c)
+==113997== 
+==113997== 600 bytes in 20 blocks are still reachable in loss record 11 of 13
+==113997==    at 0x483E77F: malloc (vg_replace_malloc.c:307)
+==113997==    by 0x109412: test_resize (in main.c)
+==113997==    by 0x10964D: main (in main.c)
+==113997== 
+==113997== 1,200 bytes in 1 blocks are still reachable in loss record 12 of 13
+==113997==    at 0x483E77F: malloc (vg_replace_malloc.c:307)
+==113997==    by 0x487E805: default_malloc (vterm.c:14)
+==113997==    by 0x487EAB8: vterm_allocator_malloc (vterm.c:85)
+==113997==    by 0x4877482: resize (screen.c:523)
+==113997==    by 0x487DAED: on_resize (state.c:1670)
+==113997==    by 0x487EB98: vterm_set_size (vterm.c:107)
+==113997==    by 0x109525: test_resize (in main.c)
+==113997==    by 0x10964D: main (in main.c)
+==113997== 
+==113997== 10,800 bytes in 1 blocks are still reachable in loss record 13 of 13
+==113997==    at 0x483E77F: malloc (vg_replace_malloc.c:307)
+==113997==    by 0x487E805: default_malloc (vterm.c:14)
+==113997==    by 0x487EAB8: vterm_allocator_malloc (vterm.c:85)
+==113997==    by 0x487623D: realloc_buffer (screen.c:82)
+==113997==    by 0x48773C7: resize (screen.c:511)
+==113997==    by 0x487DAED: on_resize (state.c:1670)
+==113997==    by 0x487EB98: vterm_set_size (vterm.c:107)
+==113997==    by 0x109525: test_resize (in main.c)
+==113997==    by 0x10964D: main (in main.c)
+==113997== 
+==113997== LEAK SUMMARY:
+==113997==    definitely lost: 0 bytes in 0 blocks
+==113997==    indirectly lost: 0 bytes in 0 blocks
+==113997==      possibly lost: 0 bytes in 0 blocks
+==113997==    still reachable: 13,924 bytes in 32 blocks
+==113997==         suppressed: 0 bytes in 0 blocks
+==113997== 
+==113997== For lists of detected and suppressed errors, rerun with: -s
+==113997== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
